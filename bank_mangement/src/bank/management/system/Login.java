@@ -3,11 +3,9 @@ package bank.management.system;
 
 import java.awt.*;
 import java.awt.event.*;
-
-import javax.print.attribute.standard.MediaSize.NA;
 import javax.swing.*;
 import java.sql.*;
-import java.util.jar.Attributes.Name;
+
 
 public class Login extends JFrame implements ActionListener{
     JLabel l1,l2,l3;
@@ -83,7 +81,7 @@ public class Login extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.WHITE);
         
         setSize(800,480);
-        setLocation(550,200);
+        setLocation(450,150);
         setVisible(true);
         
     }

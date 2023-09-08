@@ -4,8 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.sql.*;
-import com.toedter.calendar.JDateChooser;
+
 import java.util.*;
+import com.toedter.calendar.JDateChooser;
 
 public class Signup extends JFrame implements ActionListener{
     
@@ -24,7 +25,7 @@ public class Signup extends JFrame implements ActionListener{
         
         setTitle("NEW ACCOUNT APPLICATION FORM");
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/logo.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));
         Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l11 = new JLabel(i3);
@@ -225,7 +226,7 @@ public class Signup extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.WHITE);
         
         setSize(850,800);
-        setLocation(500,120);
+        setLocation(500,30);
         setVisible(true);
     }
     

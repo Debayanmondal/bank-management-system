@@ -13,7 +13,7 @@ public class Pin extends JFrame implements ActionListener{
     String pin;
     Pin(String pin){
         this.pin = pin;
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/atm.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1000, 1180, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l4 = new JLabel(i3);
@@ -46,25 +46,25 @@ public class Pin extends JFrame implements ActionListener{
         
         setLayout(null);
         
-        l1.setBounds(280,330,800,35);
+        l1.setBounds(330,350,800,35);
         l4.add(l1);
         
-        l2.setBounds(180,390,150,35);
+        l2.setBounds(250,400,150,35);
         l4.add(l2);
         
-        l3.setBounds(180,440,200,35);
+        l3.setBounds(250,440,200,35);
         l4.add(l3);
         
-        t1.setBounds(350,390,180,25);
+        t1.setBounds(400,400,180,25);
         l4.add(t1);
         
-        t2.setBounds(350,440,180,25);
+        t2.setBounds(400,440,180,25);
         l4.add(t2);
         
-        b1.setBounds(390,588,150,35);
+        b1.setBounds(442,552,150,35);
         l4.add(b1);
         
-        b2.setBounds(390,633,150,35);
+        b2.setBounds(442,589,150,35);
         l4.add(b2);
         
         setSize(960,1080);
@@ -85,23 +85,23 @@ public class Pin extends JFrame implements ActionListener{
             }
             
             if(ae.getSource()==b1){
-                if (t1.getText().equals("")){
+                if (npin.equals("")){
                     JOptionPane.showMessageDialog(null, "Enter New PIN");
                 }
-                if (t2.getText().equals("")){
+                if (rpin.equals("")){
                     JOptionPane.showMessageDialog(null, "Re-Enter new PIN");
                 }
                 
                 Conn c1 = new Conn();
                 String q1 = "update bank set pin = '"+rpin+"' where pin = '"+pin+"' ";
                 String q2 = "update login set pin = '"+rpin+"' where pin = '"+pin+"' ";
-                String q3 = "update signup3 set pin = '"+rpin+"' where pin = '"+pin+"' ";
+                String q3 = "update signupthree set pin = '"+rpin+"' where pin = '"+pin+"' ";
 
                 c1.s.executeUpdate(q1);
                 c1.s.executeUpdate(q2);
                 c1.s.executeUpdate(q3);
-
                 JOptionPane.showMessageDialog(null, "PIN changed successfully");
+
                 setVisible(false);
                 new Transactions(rpin).setVisible(true);
             

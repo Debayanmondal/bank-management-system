@@ -3,14 +3,15 @@ package bank.management.system;
 import java.sql.*;  
 
 public class Conn{
-    Connection c;
+    Connection c1;
     Statement s;
     public Conn(){  
         try{  
-            Class.forName("com.mysql.jdbc.Driver");  
-            c =DriverManager.getConnection("jdbc:mysql:///bms","root","root");    
-            s =c.createStatement(); 
-           
+             
+            c1 =DriverManager.getConnection("jdbc:mysql:///bankmanagementsystem","root","debayan");    
+            s =c1.createStatement(); 
+            
+
           
             
         }catch(Exception e){ 

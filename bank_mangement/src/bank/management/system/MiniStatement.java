@@ -31,8 +31,8 @@ public class MiniStatement extends JFrame implements ActionListener{
         add(l4);
         
         try{
-            Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from login where pin = '"+pin+"'");
+            Conn c1 = new Conn();
+            ResultSet rs = c1.s.executeQuery("select * from login where pin = '"+pin+"'");
             while(rs.next()){
                 l3.setText("Card Number:    " + rs.getString("cardno").substring(0, 4) + "XXXXXXXX" + rs.getString("cardno").substring(12));
             }
@@ -43,8 +43,8 @@ public class MiniStatement extends JFrame implements ActionListener{
             Conn c1  = new Conn();
             ResultSet rs = c1.s.executeQuery("SELECT * FROM bank where pin = '"+pin+"'");
             while(rs.next()){
-                l1.setText(l1.getText() + "<html>"+rs.getString("date")+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("mode") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("amount") + "<br><br><html>");
-                if(rs.getString("mode").equals("Deposit")){
+                l1.setText(l1.getText() + "<html>"+rs.getString("date")+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("type") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("amount") + "<br><br><html>");
+                if(rs.getString("type").equals("Deposit")){
                     balance += Integer.parseInt(rs.getString("amount"));
                 }else{
                     balance -= Integer.parseInt(rs.getString("amount"));

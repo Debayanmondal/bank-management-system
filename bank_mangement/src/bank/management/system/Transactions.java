@@ -4,16 +4,16 @@ package bank.management.system;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.sql.*;
+
 
 public class Transactions extends JFrame implements ActionListener{
 
     JLabel l1;
     JButton b1,b2,b3,b4,b5,b6,b7;
-    String pin;
+    public String pin;
     Transactions(String pin){
         this.pin = pin;
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ASimulatorSystem/icons/atm.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1000, 1180, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l2 = new JLabel(i3);
@@ -35,28 +35,28 @@ public class Transactions extends JFrame implements ActionListener{
         
         setLayout(null);
         
-        l1.setBounds(235,400,700,35);
+        l1.setBounds(275,400,700,35);
         l2.add(l1);
         
-        b1.setBounds(170,499,150,35);
+        b1.setBounds(212,480,150,35);
         l2.add(b1);
         
-        b2.setBounds(390,499,150,35);
+        b2.setBounds(442,478,150,35);
         l2.add(b2);
         
-        b3.setBounds(170,543,150,35);
+        b3.setBounds(212,517,150,35);
         l2.add(b3);
         
-        b4.setBounds(390,543,150,35);
+        b4.setBounds(442,515,150,35);
         l2.add(b4);
         
-        b5.setBounds(170,588,150,35);
+        b5.setBounds(212,554,150,35);
         l2.add(b5);
         
-        b6.setBounds(390,588,150,35);
+        b6.setBounds(442,552,150,35);
         l2.add(b6);
         
-        b7.setBounds(390,633,150,35);
+        b7.setBounds(442,589,150,35);
         l2.add(b7);
         
         
@@ -94,7 +94,7 @@ public class Transactions extends JFrame implements ActionListener{
             setVisible(false);
             new Pin(pin).setVisible(true);
         }else if(ae.getSource()==b6){ 
-            this.setVisible(false);
+            setVisible(false);
             new BalanceEnquiry(pin).setVisible(true);
         }else if(ae.getSource()==b7){ 
             System.exit(0);
@@ -102,6 +102,6 @@ public class Transactions extends JFrame implements ActionListener{
     }
     
     public static void main(String[] args){
-        new Transactions("").setVisible(true);
+        new Transactions("");
     }
 }
